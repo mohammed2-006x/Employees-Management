@@ -1,15 +1,16 @@
-﻿using System;
+﻿using Employees_Management.Properties;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Globalization;
-using Employees_Management.Properties;
 
 
 namespace Employees_Management
@@ -31,9 +32,9 @@ namespace Employees_Management
                 lblName.Text = listView1.SelectedItems[0].SubItems[1].Text;
                 lblPhone.Text = listView1.SelectedItems[0].SubItems[2].Text;
                 lblAge.Text = listView1.SelectedItems[0].SubItems[3].Text;
-                lblWorkingPeriod.Text= listView1.SelectedItems[0].SubItems[4].Text;
-                lblEmail.Text= listView1.SelectedItems[0].SubItems[5].Text;
-                lblGender.Text=( listView1.SelectedItems[0].SubItems[6].Text == "M" ) ? "ذكر" : "أنثى";
+                lblWorkingPeriod.Text = listView1.SelectedItems[0].SubItems[4].Text;
+                lblEmail.Text = listView1.SelectedItems[0].SubItems[5].Text;
+                lblGender.Text = (listView1.SelectedItems[0].SubItems[6].Text == "M") ? "ذكر" : "أنثى";
                 pbEmployee.Image = (listView1.SelectedItems[0].ImageIndex == 0) ? Resources.Man : Resources.Woman;
             }
         }
@@ -66,7 +67,6 @@ namespace Employees_Management
             return WorkingSpan;
 
         }
-
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -107,13 +107,8 @@ namespace Employees_Management
             mtxtTo.Clear();
             rbMale.Checked = true;
             dtpBirthDay.Text = DateTime.Parse("01/01/2000").ToString();
+            txtFullName.Focus();
 
-
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
 
 
         }
@@ -152,10 +147,7 @@ namespace Employees_Management
             comboBox1.SelectedIndex = 2;
         }
 
-
-
         private InputLanguage oldLanguage;
-
 
         private void txtFullName_Enter(object sender, EventArgs e)
         {
@@ -177,7 +169,102 @@ namespace Employees_Management
                 InputLanguage.CurrentInputLanguage = oldLanguage;
         }
 
+        private void ResetInfoCard()
+        {
+            lblID.Text = "UNDEFINED";
+            lblName.Text = "UNDEFINED";
+            lblPhone.Text = "UNDEFINED";
+            lblAge.Text = "UNDEFINED";
+            lblWorkingPeriod.Text = "UNDEFINED";
+            lblEmail.Text = "UNDEFINED";
+            lblGender.Text = "UNDEFINED";
+            pbEmployee.Image = Resources.Man;
+        }
 
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (btnCheckEmployees.Tag.ToString() == "1")
+            {
+                if (listView1.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("من فضلك قم بتحديد الموظفين المراد حذفهم من القائمة", "خطأ في الحدف", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    foreach (ListViewItem Item in listView1.SelectedItems)
+                    {
+                        Item.Remove();
+
+                    }
+
+                    bool IsEmployeeDeleted1 = true;
+
+                    foreach (ListViewItem Item in listView1.Items)
+                    {
+                        if (Item.Text==lblID.Text)
+                        {
+                            IsEmployeeDeleted1 = false;
+                            return;
+                        }
+
+                    }
+
+                    if(IsEmployeeDeleted1)
+                        ResetInfoCard();
+
+
+                    return;
+                }
+            }
+
+
+
+            if (listView1.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("من فضلك قم بتحديد الموظفين المراد حذفهم من القائمة", "خطأ في الحدف", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            foreach (ListViewItem Item in listView1.CheckedItems)
+            {
+                Item.Remove();
+
+            }
+
+            bool IsEmployeeDeleted2 = true;
+
+            foreach (ListViewItem Item in listView1.Items)
+            {
+                if (Item.Text == lblID.Text)
+                {
+                    IsEmployeeDeleted2 = false;
+                    return;
+                }
+
+            }
+
+            if (IsEmployeeDeleted2)
+                ResetInfoCard();
+
+
+        }
+
+        private void btnCheckEmployees_Click(object sender, EventArgs e)
+        {
+            if (btnCheckEmployees.Tag.ToString() == "1")
+            {
+                listView1.CheckBoxes = true;
+                btnCheckEmployees.Text = "إلغاء التحديد العناصر";
+                btnCheckEmployees.Tag = "0";
+            }
+            else if (btnCheckEmployees.Tag.ToString() == "0")
+            {
+                listView1.CheckBoxes = false;
+                btnCheckEmployees.Text = "تحديد العناصر";
+                btnCheckEmployees.Tag = "1";
+            }
+        }
     }
 
 }

@@ -30,6 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            "2001",
+            "محمد",
+            "0916216683",
+            "19",
+            "10 ساعة",
+            "mohammedtaher@gmail.com",
+            "M"}, 0);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            "2002",
+            "علي عكيكة",
+            "0925478896",
+            "20",
+            "20 ساعة",
+            "ali@ha.frs",
+            "F"}, 0);
             this.label1 = new System.Windows.Forms.Label();
             this.gbEmployeeInfo = new System.Windows.Forms.GroupBox();
             this.dtpBirthDay = new System.Windows.Forms.DateTimePicker();
@@ -53,7 +69,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pbEmployee = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -69,7 +85,6 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -80,6 +95,7 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView1 = new System.Windows.Forms.ListView();
+            this.btnCheckEmployees = new System.Windows.Forms.Button();
             this.gbEmployeeInfo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbGender.SuspendLayout();
@@ -358,29 +374,29 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(1132, 317);
+            this.button2.Location = new System.Drawing.Point(1140, 318);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(137, 60);
             this.button2.TabIndex = 14;
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btnRemove
             // 
-            this.button1.BackColor = System.Drawing.Color.LightCoral;
-            this.button1.BackgroundImage = global::Employees_Management.Properties.Resources.Delete_button_removebg_preview__1_;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkRed;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(1313, 317);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 60);
-            this.button1.TabIndex = 12;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRemove.BackColor = System.Drawing.Color.LightCoral;
+            this.btnRemove.BackgroundImage = global::Employees_Management.Properties.Resources.Delete_button_removebg_preview__1_;
+            this.btnRemove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnRemove.FlatAppearance.BorderSize = 3;
+            this.btnRemove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkRed;
+            this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRemove.Location = new System.Drawing.Point(1309, 318);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(137, 60);
+            this.btnRemove.TabIndex = 12;
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // label9
             // 
@@ -559,24 +575,6 @@
             this.panel1.Size = new System.Drawing.Size(680, 282);
             this.panel1.TabIndex = 29;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button3.FlatAppearance.BorderSize = 3;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(826, 317);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(262, 60);
-            this.button3.TabIndex = 30;
-            this.button3.Text = "إضافة بشكل عشوائي";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -638,6 +636,9 @@
             this.columnHeader7});
             this.listView1.Font = new System.Drawing.Font("Tahoma", 12F);
             this.listView1.HideSelection = false;
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2});
             this.listView1.LargeImageList = this.imageList2;
             this.listView1.Location = new System.Drawing.Point(12, 386);
             this.listView1.Name = "listView1";
@@ -650,6 +651,18 @@
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
+            // btnCheckEmployees
+            // 
+            this.btnCheckEmployees.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.btnCheckEmployees.Location = new System.Drawing.Point(851, 318);
+            this.btnCheckEmployees.Name = "btnCheckEmployees";
+            this.btnCheckEmployees.Size = new System.Drawing.Size(257, 60);
+            this.btnCheckEmployees.TabIndex = 31;
+            this.btnCheckEmployees.Tag = "1";
+            this.btnCheckEmployees.Text = "تحديد العناصر";
+            this.btnCheckEmployees.UseVisualStyleBackColor = true;
+            this.btnCheckEmployees.Click += new System.EventHandler(this.btnCheckEmployees_Click);
+            // 
             // Form1
             // 
             this.AcceptButton = this.btnAdd;
@@ -657,9 +670,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1459, 754);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnCheckEmployees);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.listView1);
@@ -709,7 +722,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pbEmployee;
         private System.Windows.Forms.Label label9;
@@ -727,7 +740,6 @@
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -738,6 +750,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button btnCheckEmployees;
     }
 }
 

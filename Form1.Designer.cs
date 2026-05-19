@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.gbEmployeeInfo = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpBirthDay = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtTo = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtFrom = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.gbGender = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbFemale = new System.Windows.Forms.RadioButton();
+            this.rbMale = new System.Windows.Forms.RadioButton();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbEmployee = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,26 +61,29 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblWorkingPeriod = new System.Windows.Forms.Label();
+            this.lblAge = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button3 = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.gbEmployeeInfo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbGender.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmployee)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,7 +103,7 @@
             // gbEmployeeInfo
             // 
             this.gbEmployeeInfo.BackColor = System.Drawing.SystemColors.Window;
-            this.gbEmployeeInfo.Controls.Add(this.dateTimePicker1);
+            this.gbEmployeeInfo.Controls.Add(this.dtpBirthDay);
             this.gbEmployeeInfo.Controls.Add(this.groupBox1);
             this.gbEmployeeInfo.Controls.Add(this.gbGender);
             this.gbEmployeeInfo.Controls.Add(this.txtEmail);
@@ -119,47 +122,48 @@
             this.gbEmployeeInfo.TabStop = false;
             this.gbEmployeeInfo.Text = "بيانات الموظف";
             // 
-            // dateTimePicker1
+            // dtpBirthDay
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(170, 206);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dateTimePicker1.RightToLeftLayout = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(387, 36);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dtpBirthDay.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.dtpBirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBirthDay.Location = new System.Drawing.Point(170, 206);
+            this.dtpBirthDay.Name = "dtpBirthDay";
+            this.dtpBirthDay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtpBirthDay.RightToLeftLayout = true;
+            this.dtpBirthDay.Size = new System.Drawing.Size(387, 36);
+            this.dtpBirthDay.TabIndex = 3;
+            this.dtpBirthDay.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.maskedTextBox3);
-            this.groupBox1.Controls.Add(this.maskedTextBox2);
+            this.groupBox1.Controls.Add(this.mtxtTo);
+            this.groupBox1.Controls.Add(this.mtxtFrom);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(17, 99);
+            this.groupBox1.Location = new System.Drawing.Point(11, 99);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(285, 78);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " الدوام";
             // 
-            // maskedTextBox3
+            // mtxtTo
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(13, 32);
-            this.maskedTextBox3.Mask = "00:00";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(58, 28);
-            this.maskedTextBox3.TabIndex = 14;
-            this.maskedTextBox3.ValidatingType = typeof(System.DateTime);
+            this.mtxtTo.Location = new System.Drawing.Point(13, 32);
+            this.mtxtTo.Mask = "00:00";
+            this.mtxtTo.Name = "mtxtTo";
+            this.mtxtTo.Size = new System.Drawing.Size(58, 28);
+            this.mtxtTo.TabIndex = 14;
+            this.mtxtTo.ValidatingType = typeof(System.DateTime);
             // 
-            // maskedTextBox2
+            // mtxtFrom
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(153, 32);
-            this.maskedTextBox2.Mask = "00:00";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(58, 28);
-            this.maskedTextBox2.TabIndex = 13;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.mtxtFrom.Location = new System.Drawing.Point(153, 32);
+            this.mtxtFrom.Mask = "00:00";
+            this.mtxtFrom.Name = "mtxtFrom";
+            this.mtxtFrom.Size = new System.Drawing.Size(58, 28);
+            this.mtxtFrom.TabIndex = 13;
+            this.mtxtFrom.ValidatingType = typeof(System.DateTime);
             // 
             // label7
             // 
@@ -183,62 +187,83 @@
             // 
             // gbGender
             // 
-            this.gbGender.Controls.Add(this.radioButton2);
-            this.gbGender.Controls.Add(this.radioButton1);
-            this.gbGender.Location = new System.Drawing.Point(17, 15);
+            this.gbGender.Controls.Add(this.rbFemale);
+            this.gbGender.Controls.Add(this.rbMale);
+            this.gbGender.Location = new System.Drawing.Point(11, 15);
             this.gbGender.Name = "gbGender";
             this.gbGender.Size = new System.Drawing.Size(285, 78);
             this.gbGender.TabIndex = 4;
             this.gbGender.TabStop = false;
             this.gbGender.Text = "الجنس";
             // 
-            // radioButton2
+            // rbFemale
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.radioButton2.Location = new System.Drawing.Point(38, 36);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(80, 28);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = " انثى";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbFemale.AutoSize = true;
+            this.rbFemale.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.rbFemale.Location = new System.Drawing.Point(38, 36);
+            this.rbFemale.Name = "rbFemale";
+            this.rbFemale.Size = new System.Drawing.Size(80, 28);
+            this.rbFemale.TabIndex = 1;
+            this.rbFemale.Text = " انثى";
+            this.rbFemale.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbMale
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.radioButton1.Location = new System.Drawing.Point(167, 36);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(69, 28);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = " ذكر";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbMale.AutoSize = true;
+            this.rbMale.Checked = true;
+            this.rbMale.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.rbMale.Location = new System.Drawing.Point(167, 36);
+            this.rbMale.Name = "rbMale";
+            this.rbMale.Size = new System.Drawing.Size(69, 28);
+            this.rbMale.TabIndex = 0;
+            this.rbMale.TabStop = true;
+            this.rbMale.Text = " ذكر";
+            this.rbMale.UseVisualStyleBackColor = true;
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.txtEmail.Location = new System.Drawing.Point(341, 88);
+            this.txtEmail.Location = new System.Drawing.Point(302, 88);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(243, 32);
+            this.txtEmail.Size = new System.Drawing.Size(282, 32);
             this.txtEmail.TabIndex = 1;
             // 
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.txtPhone.Location = new System.Drawing.Point(341, 141);
+            this.txtPhone.Location = new System.Drawing.Point(302, 141);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(243, 32);
+            this.txtPhone.Size = new System.Drawing.Size(282, 32);
             this.txtPhone.TabIndex = 2;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Lime;
+            this.btnAdd.BackgroundImage = global::Employees_Management.Properties.Resources.add_Button;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.LimeGreen;
+            this.btnAdd.FlatAppearance.BorderSize = 2;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnAdd.Location = new System.Drawing.Point(17, 194);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(128, 68);
+            this.btnAdd.TabIndex = 11;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtFullName
             // 
             this.txtFullName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.txtFullName.Location = new System.Drawing.Point(341, 35);
+            this.txtFullName.Location = new System.Drawing.Point(302, 35);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(243, 32);
+            this.txtFullName.Size = new System.Drawing.Size(282, 32);
             this.txtFullName.TabIndex = 0;
+            this.txtFullName.Enter += new System.EventHandler(this.txtFullName_Enter);
+            this.txtFullName.Leave += new System.EventHandler(this.txtFullName_Leave);
             // 
             // label5
             // 
@@ -280,33 +305,11 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "الاسم الكامل :";
             // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
-            this.listView1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 386);
-            this.listView1.Name = "listView1";
-            this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.listView1.RightToLeftLayout = true;
-            this.listView1.Size = new System.Drawing.Size(1438, 359);
-            this.listView1.TabIndex = 12;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(510, 348);
+            this.label8.Location = new System.Drawing.Point(330, 348);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(187, 29);
             this.label8.TabIndex = 6;
@@ -326,40 +329,23 @@
             "لوحات"});
             this.comboBox1.Location = new System.Drawing.Point(17, 348);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(487, 32);
+            this.comboBox1.Size = new System.Drawing.Size(307, 32);
             this.comboBox1.Sorted = true;
             this.comboBox1.TabIndex = 13;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // btnAdd
+            // pbEmployee
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Lime;
-            this.btnAdd.BackgroundImage = global::Employees_Management.Properties.Resources.add_Button;
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.LimeGreen;
-            this.btnAdd.FlatAppearance.BorderSize = 2;
-            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
-            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAdd.Location = new System.Drawing.Point(17, 194);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(128, 68);
-            this.btnAdd.TabIndex = 11;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::Employees_Management.Properties.Resources.Man;
-            this.pictureBox1.Location = new System.Drawing.Point(469, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(202, 259);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.pbEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEmployee.Image = global::Employees_Management.Properties.Resources.Man;
+            this.pbEmployee.Location = new System.Drawing.Point(469, 10);
+            this.pbEmployee.Name = "pbEmployee";
+            this.pbEmployee.Size = new System.Drawing.Size(202, 259);
+            this.pbEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbEmployee.TabIndex = 15;
+            this.pbEmployee.TabStop = false;
             // 
             // button2
             // 
@@ -377,6 +363,7 @@
             this.button2.Size = new System.Drawing.Size(137, 60);
             this.button2.TabIndex = 14;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -465,122 +452,102 @@
             this.label15.TabIndex = 21;
             this.label15.Text = " الجنس :";
             // 
-            // label16
+            // lblID
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label16.ForeColor = System.Drawing.Color.Blue;
-            this.label16.Location = new System.Drawing.Point(15, 10);
-            this.label16.Name = "label16";
-            this.label16.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label16.Size = new System.Drawing.Size(131, 24);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "UNDEFINED";
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lblID.ForeColor = System.Drawing.Color.Blue;
+            this.lblID.Location = new System.Drawing.Point(15, 10);
+            this.lblID.Name = "lblID";
+            this.lblID.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblID.Size = new System.Drawing.Size(131, 24);
+            this.lblID.TabIndex = 22;
+            this.lblID.Text = "UNDEFINED";
             // 
-            // label17
+            // lblWorkingPeriod
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label17.ForeColor = System.Drawing.Color.Blue;
-            this.label17.Location = new System.Drawing.Point(15, 166);
-            this.label17.Name = "label17";
-            this.label17.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label17.Size = new System.Drawing.Size(131, 24);
-            this.label17.TabIndex = 23;
-            this.label17.Text = "UNDEFINED";
+            this.lblWorkingPeriod.AutoSize = true;
+            this.lblWorkingPeriod.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lblWorkingPeriod.ForeColor = System.Drawing.Color.Blue;
+            this.lblWorkingPeriod.Location = new System.Drawing.Point(15, 166);
+            this.lblWorkingPeriod.Name = "lblWorkingPeriod";
+            this.lblWorkingPeriod.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblWorkingPeriod.Size = new System.Drawing.Size(131, 24);
+            this.lblWorkingPeriod.TabIndex = 23;
+            this.lblWorkingPeriod.Text = "UNDEFINED";
             // 
-            // label18
+            // lblAge
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label18.ForeColor = System.Drawing.Color.Blue;
-            this.label18.Location = new System.Drawing.Point(15, 127);
-            this.label18.Name = "label18";
-            this.label18.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label18.Size = new System.Drawing.Size(131, 24);
-            this.label18.TabIndex = 24;
-            this.label18.Text = "UNDEFINED";
+            this.lblAge.AutoSize = true;
+            this.lblAge.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAge.ForeColor = System.Drawing.Color.Blue;
+            this.lblAge.Location = new System.Drawing.Point(15, 127);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblAge.Size = new System.Drawing.Size(131, 24);
+            this.lblAge.TabIndex = 24;
+            this.lblAge.Text = "UNDEFINED";
             // 
-            // label19
+            // lblPhone
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label19.ForeColor = System.Drawing.Color.Blue;
-            this.label19.Location = new System.Drawing.Point(15, 88);
-            this.label19.Name = "label19";
-            this.label19.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label19.Size = new System.Drawing.Size(131, 24);
-            this.label19.TabIndex = 25;
-            this.label19.Text = "UNDEFINED";
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lblPhone.ForeColor = System.Drawing.Color.Blue;
+            this.lblPhone.Location = new System.Drawing.Point(15, 88);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblPhone.Size = new System.Drawing.Size(131, 24);
+            this.lblPhone.TabIndex = 25;
+            this.lblPhone.Text = "UNDEFINED";
             // 
-            // label20
+            // lblName
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label20.ForeColor = System.Drawing.Color.Blue;
-            this.label20.Location = new System.Drawing.Point(15, 49);
-            this.label20.Name = "label20";
-            this.label20.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label20.Size = new System.Drawing.Size(131, 24);
-            this.label20.TabIndex = 26;
-            this.label20.Text = "UNDEFINED";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lblName.ForeColor = System.Drawing.Color.Blue;
+            this.lblName.Location = new System.Drawing.Point(15, 49);
+            this.lblName.Name = "lblName";
+            this.lblName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblName.Size = new System.Drawing.Size(131, 24);
+            this.lblName.TabIndex = 26;
+            this.lblName.Text = "UNDEFINED";
             // 
-            // label21
+            // lblGender
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label21.ForeColor = System.Drawing.Color.Blue;
-            this.label21.Location = new System.Drawing.Point(15, 244);
-            this.label21.Name = "label21";
-            this.label21.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label21.Size = new System.Drawing.Size(131, 24);
-            this.label21.TabIndex = 27;
-            this.label21.Text = "UNDEFINED";
+            this.lblGender.AutoSize = true;
+            this.lblGender.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lblGender.ForeColor = System.Drawing.Color.Blue;
+            this.lblGender.Location = new System.Drawing.Point(15, 244);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblGender.Size = new System.Drawing.Size(131, 24);
+            this.lblGender.TabIndex = 27;
+            this.lblGender.Text = "UNDEFINED";
             // 
-            // label22
+            // lblEmail
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label22.ForeColor = System.Drawing.Color.Blue;
-            this.label22.Location = new System.Drawing.Point(15, 205);
-            this.label22.Name = "label22";
-            this.label22.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label22.Size = new System.Drawing.Size(131, 24);
-            this.label22.TabIndex = 28;
-            this.label22.Text = "UNDEFINED";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "المعرف";
-            this.columnHeader1.Width = 209;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "الاسم كامل";
-            this.columnHeader2.Width = 368;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "رقم الهاتف";
-            this.columnHeader3.Width = 237;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "العمر";
-            this.columnHeader4.Width = 79;
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lblEmail.ForeColor = System.Drawing.Color.Blue;
+            this.lblEmail.Location = new System.Drawing.Point(15, 205);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblEmail.Size = new System.Drawing.Size(131, 24);
+            this.lblEmail.TabIndex = 28;
+            this.lblEmail.Text = "UNDEFINED";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.label22);
+            this.panel1.Controls.Add(this.lblID);
+            this.panel1.Controls.Add(this.lblEmail);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.lblGender);
+            this.panel1.Controls.Add(this.pbEmployee);
+            this.panel1.Controls.Add(this.lblName);
+            this.panel1.Controls.Add(this.lblPhone);
+            this.panel1.Controls.Add(this.lblAge);
+            this.panel1.Controls.Add(this.lblWorkingPeriod);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label13);
@@ -591,21 +558,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(680, 282);
             this.panel1.TabIndex = 29;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "مدة الدوام";
-            this.columnHeader5.Width = 144;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "الإيميل";
-            this.columnHeader6.Width = 283;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "الجنس";
-            this.columnHeader7.Width = 114;
             // 
             // button3
             // 
@@ -624,6 +576,79 @@
             this.button3.TabIndex = 30;
             this.button3.Text = "إضافة بشكل عشوائي";
             this.button3.UseVisualStyleBackColor = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Man.jpg");
+            this.imageList1.Images.SetKeyName(1, "Woman.jpg");
+            // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "Man.jpg");
+            this.imageList2.Images.SetKeyName(1, "Woman.jpg");
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "المعرف";
+            this.columnHeader1.Width = 209;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "الاسم كامل";
+            this.columnHeader2.Width = 187;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "رقم الهاتف";
+            this.columnHeader3.Width = 237;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "العمر";
+            this.columnHeader4.Width = 79;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "مدة الدوام";
+            this.columnHeader5.Width = 144;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "الإيميل";
+            this.columnHeader6.Width = 283;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "الجنس";
+            this.columnHeader7.Width = 114;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.listView1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.listView1.HideSelection = false;
+            this.listView1.LargeImageList = this.imageList2;
+            this.listView1.Location = new System.Drawing.Point(12, 386);
+            this.listView1.Name = "listView1";
+            this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.listView1.RightToLeftLayout = true;
+            this.listView1.Size = new System.Drawing.Size(1438, 359);
+            this.listView1.SmallImageList = this.imageList1;
+            this.listView1.TabIndex = 12;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -646,13 +671,14 @@
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "برنامج إدارة الموظفين";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.gbEmployeeInfo.ResumeLayout(false);
             this.gbEmployeeInfo.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gbGender.ResumeLayout(false);
             this.gbGender.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmployee)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -672,21 +698,20 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.GroupBox gbGender;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbFemale;
+        private System.Windows.Forms.RadioButton rbMale;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox mtxtTo;
+        private System.Windows.Forms.MaskedTextBox mtxtFrom;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpBirthDay;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbEmployee;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -694,22 +719,25 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblWorkingPeriod;
+        private System.Windows.Forms.Label lblAge;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ListView listView1;
     }
 }
 

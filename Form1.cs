@@ -35,6 +35,7 @@ namespace Employees_Management
                 lblWorkingPeriod.Text = listView1.SelectedItems[0].SubItems[4].Text;
                 lblEmail.Text = listView1.SelectedItems[0].SubItems[5].Text;
                 lblGender.Text = (listView1.SelectedItems[0].SubItems[6].Text == "M") ? "ذكر" : "أنثى";
+                lblSalary.Text = listView1.SelectedItems[0].SubItems[7].Text;
                 pbEmployee.Image = (listView1.SelectedItems[0].ImageIndex == 0) ? Resources.Man : Resources.Woman;
             }
         }
@@ -71,7 +72,7 @@ namespace Employees_Management
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(txtFullName.Text) || string.IsNullOrEmpty(txtPhone.Text) || string.IsNullOrEmpty(txtEmail.Text) || mtxtFrom.MaskFull == false || mtxtTo.MaskFull == false)
+            if (string.IsNullOrEmpty(txtFullName.Text) || string.IsNullOrEmpty(txtPhone.Text) || string.IsNullOrEmpty(txtEmail.Text) || mtxtFrom.MaskFull == false || mtxtTo.MaskFull == false || mtxtSalary.MaskCompleted == false )
             {
                 return;
             }
@@ -95,6 +96,7 @@ namespace Employees_Management
             item.SubItems.Add(strWorkingSpan);
             item.SubItems.Add(txtEmail.Text);
             item.SubItems.Add(rbMale.Checked ? "M" : "F");
+            item.SubItems.Add(mtxtSalary.Text + "د.ل");
             item.ImageIndex = rbMale.Checked ? 0 : 1;
 
 
@@ -105,6 +107,7 @@ namespace Employees_Management
             txtPhone.Clear();
             mtxtFrom.Clear();
             mtxtTo.Clear();
+            mtxtSalary.Clear();
             rbMale.Checked = true;
             dtpBirthDay.Text = DateTime.Parse("01/01/2000").ToString();
             txtFullName.Focus();
@@ -178,7 +181,7 @@ namespace Employees_Management
             lblWorkingPeriod.Text = "UNDEFINED";
             lblEmail.Text = "UNDEFINED";
             lblGender.Text = "UNDEFINED";
-            pbEmployee.Image = Resources.Man;
+            pbEmployee.Image = null;
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -264,6 +267,21 @@ namespace Employees_Management
                 btnCheckEmployees.Text = "تحديد العناصر";
                 btnCheckEmployees.Tag = "1";
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(listView1.SelectedItems.Count==0)
+            {
+                 MessageBox.Show("من فضلك قم بتحديد الموظف المراد تعديل بياناته من القائمة", "خطأ في التعديل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            frmEditEmployee F2 = new frmEditEmployee(listView1.SelectedItems[0]);
+
+            F2.ShowDialog();
+
+            listView1.Refresh();
+
         }
     }
 

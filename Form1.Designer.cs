@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "2001",
             "محمد طاهر",
             "0916216683",
@@ -39,7 +39,7 @@
             "mohammedtaher@gmail.com",
             "M",
             "10000د.ل"}, 0);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "2002",
             "علي عكيكة",
             "0925478896",
@@ -50,6 +50,9 @@
             "500د.ل"}, 0);
             this.label1 = new System.Windows.Forms.Label();
             this.gbEmployeeInfo = new System.Windows.Forms.GroupBox();
+            this.mtxtSalary = new System.Windows.Forms.MaskedTextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.dtpBirthDay = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.mtxtTo = new System.Windows.Forms.MaskedTextBox();
@@ -61,6 +64,7 @@
             this.rbMale = new System.Windows.Forms.RadioButton();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -83,6 +87,9 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSalary = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.pbEmployee = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -93,22 +100,17 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView1 = new System.Windows.Forms.ListView();
-            this.btnCheckEmployees = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.mtxtSalary = new System.Windows.Forms.MaskedTextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label18 = new System.Windows.Forms.Label();
-            this.lblSalary = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnCheckEmployees = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.pbEmployee = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbEmployeeInfo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbGender.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -119,7 +121,7 @@
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1537, 35);
+            this.label1.Size = new System.Drawing.Size(1317, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = " ادارة الموظفين";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -142,22 +144,54 @@
             this.gbEmployeeInfo.Controls.Add(this.label3);
             this.gbEmployeeInfo.Controls.Add(this.label2);
             this.gbEmployeeInfo.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.gbEmployeeInfo.Location = new System.Drawing.Point(698, 38);
+            this.gbEmployeeInfo.Location = new System.Drawing.Point(598, 31);
+            this.gbEmployeeInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbEmployeeInfo.Name = "gbEmployeeInfo";
-            this.gbEmployeeInfo.Size = new System.Drawing.Size(834, 279);
+            this.gbEmployeeInfo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbEmployeeInfo.Size = new System.Drawing.Size(715, 227);
             this.gbEmployeeInfo.TabIndex = 1;
             this.gbEmployeeInfo.TabStop = false;
             this.gbEmployeeInfo.Text = "بيانات الموظف";
+            // 
+            // mtxtSalary
+            // 
+            this.mtxtSalary.Location = new System.Drawing.Point(501, 194);
+            this.mtxtSalary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mtxtSalary.Mask = "000999";
+            this.mtxtSalary.Name = "mtxtSalary";
+            this.mtxtSalary.Size = new System.Drawing.Size(63, 24);
+            this.mtxtSalary.TabIndex = 4;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.label17.Location = new System.Drawing.Point(454, 196);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(40, 19);
+            this.label17.TabIndex = 14;
+            this.label17.Text = " د.ل";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.label16.Location = new System.Drawing.Point(566, 197);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(67, 19);
+            this.label16.TabIndex = 12;
+            this.label16.Text = " الراتب :";
             // 
             // dtpBirthDay
             // 
             this.dtpBirthDay.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.dtpBirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBirthDay.Location = new System.Drawing.Point(375, 185);
+            this.dtpBirthDay.Location = new System.Drawing.Point(321, 150);
+            this.dtpBirthDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpBirthDay.Name = "dtpBirthDay";
             this.dtpBirthDay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dtpBirthDay.RightToLeftLayout = true;
-            this.dtpBirthDay.Size = new System.Drawing.Size(282, 36);
+            this.dtpBirthDay.Size = new System.Drawing.Size(242, 30);
             this.dtpBirthDay.TabIndex = 3;
             this.dtpBirthDay.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
@@ -167,28 +201,33 @@
             this.groupBox1.Controls.Add(this.mtxtFrom);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(11, 105);
+            this.groupBox1.Location = new System.Drawing.Point(9, 86);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(285, 91);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(255, 74);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " الدوام";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // mtxtTo
             // 
-            this.mtxtTo.Location = new System.Drawing.Point(13, 33);
+            this.mtxtTo.Location = new System.Drawing.Point(27, 27);
+            this.mtxtTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mtxtTo.Mask = "00:00";
             this.mtxtTo.Name = "mtxtTo";
-            this.mtxtTo.Size = new System.Drawing.Size(58, 28);
+            this.mtxtTo.Size = new System.Drawing.Size(50, 24);
             this.mtxtTo.TabIndex = 1;
             this.mtxtTo.ValidatingType = typeof(System.DateTime);
             // 
             // mtxtFrom
             // 
-            this.mtxtFrom.Location = new System.Drawing.Point(153, 33);
+            this.mtxtFrom.Location = new System.Drawing.Point(142, 27);
+            this.mtxtFrom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mtxtFrom.Mask = "00:00";
             this.mtxtFrom.Name = "mtxtFrom";
-            this.mtxtFrom.Size = new System.Drawing.Size(58, 28);
+            this.mtxtFrom.Size = new System.Drawing.Size(50, 24);
             this.mtxtFrom.TabIndex = 0;
             this.mtxtFrom.ValidatingType = typeof(System.DateTime);
             // 
@@ -196,9 +235,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(87, 37);
+            this.label7.Location = new System.Drawing.Point(82, 30);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 24);
+            this.label7.Size = new System.Drawing.Size(36, 19);
             this.label7.TabIndex = 11;
             this.label7.Text = "إلى";
             // 
@@ -206,9 +245,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(227, 34);
+            this.label6.Location = new System.Drawing.Point(201, 28);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 24);
+            this.label6.Size = new System.Drawing.Size(38, 19);
             this.label6.TabIndex = 10;
             this.label6.Text = " من";
             // 
@@ -216,9 +255,11 @@
             // 
             this.gbGender.Controls.Add(this.rbFemale);
             this.gbGender.Controls.Add(this.rbMale);
-            this.gbGender.Location = new System.Drawing.Point(11, 15);
+            this.gbGender.Location = new System.Drawing.Point(9, 12);
+            this.gbGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbGender.Name = "gbGender";
-            this.gbGender.Size = new System.Drawing.Size(285, 83);
+            this.gbGender.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGender.Size = new System.Drawing.Size(255, 67);
             this.gbGender.TabIndex = 5;
             this.gbGender.TabStop = false;
             this.gbGender.Text = "الجنس";
@@ -227,9 +268,10 @@
             // 
             this.rbFemale.AutoSize = true;
             this.rbFemale.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.rbFemale.Location = new System.Drawing.Point(31, 35);
+            this.rbFemale.Location = new System.Drawing.Point(27, 28);
+            this.rbFemale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbFemale.Name = "rbFemale";
-            this.rbFemale.Size = new System.Drawing.Size(80, 28);
+            this.rbFemale.Size = new System.Drawing.Size(65, 23);
             this.rbFemale.TabIndex = 1;
             this.rbFemale.Text = " انثى";
             this.rbFemale.UseVisualStyleBackColor = true;
@@ -239,9 +281,10 @@
             this.rbMale.AutoSize = true;
             this.rbMale.Checked = true;
             this.rbMale.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.rbMale.Location = new System.Drawing.Point(169, 35);
+            this.rbMale.Location = new System.Drawing.Point(145, 28);
+            this.rbMale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbMale.Name = "rbMale";
-            this.rbMale.Size = new System.Drawing.Size(69, 28);
+            this.rbMale.Size = new System.Drawing.Size(58, 23);
             this.rbMale.TabIndex = 0;
             this.rbMale.TabStop = true;
             this.rbMale.Text = " ذكر";
@@ -250,25 +293,48 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.txtEmail.Location = new System.Drawing.Point(375, 85);
+            this.txtEmail.Location = new System.Drawing.Point(321, 69);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(282, 32);
+            this.txtEmail.Size = new System.Drawing.Size(242, 27);
             this.txtEmail.TabIndex = 1;
             // 
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.txtPhone.Location = new System.Drawing.Point(375, 135);
+            this.txtPhone.Location = new System.Drawing.Point(321, 110);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(282, 32);
+            this.txtPhone.Size = new System.Drawing.Size(242, 27);
             this.txtPhone.TabIndex = 2;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Lime;
+            this.btnAdd.BackgroundImage = global::Employees_Management.Properties.Resources.add_Button;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.LimeGreen;
+            this.btnAdd.FlatAppearance.BorderSize = 2;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnAdd.Location = new System.Drawing.Point(9, 164);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(110, 55);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtFullName
             // 
             this.txtFullName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.txtFullName.Location = new System.Drawing.Point(375, 35);
+            this.txtFullName.Location = new System.Drawing.Point(321, 28);
+            this.txtFullName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(282, 32);
+            this.txtFullName.Size = new System.Drawing.Size(242, 27);
             this.txtFullName.TabIndex = 0;
             this.txtFullName.Enter += new System.EventHandler(this.txtFullName_Enter);
             this.txtFullName.Leave += new System.EventHandler(this.txtFullName_Leave);
@@ -277,9 +343,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(660, 191);
+            this.label5.Location = new System.Drawing.Point(566, 155);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 24);
+            this.label5.Size = new System.Drawing.Size(112, 19);
             this.label5.TabIndex = 3;
             this.label5.Text = " تاريخ الميلاد :";
             // 
@@ -287,9 +353,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(660, 89);
+            this.label4.Location = new System.Drawing.Point(566, 72);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 24);
+            this.label4.Size = new System.Drawing.Size(132, 19);
             this.label4.TabIndex = 2;
             this.label4.Text = "البريد الالكتروني:";
             // 
@@ -297,9 +363,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(660, 140);
+            this.label3.Location = new System.Drawing.Point(566, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 24);
+            this.label3.Size = new System.Drawing.Size(98, 19);
             this.label3.TabIndex = 1;
             this.label3.Text = "رقم الهاتف :";
             // 
@@ -307,9 +373,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(660, 38);
+            this.label2.Location = new System.Drawing.Point(566, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 24);
+            this.label2.Size = new System.Drawing.Size(117, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "الاسم الكامل :";
             // 
@@ -317,9 +383,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(325, 384);
+            this.label8.Location = new System.Drawing.Point(279, 312);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(187, 29);
+            this.label8.Size = new System.Drawing.Size(150, 23);
             this.label8.TabIndex = 6;
             this.label8.Text = " طريقة العرض :";
             // 
@@ -335,9 +401,10 @@
             "تفاصيل",
             "قائمة",
             "لوحات"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 382);
+            this.comboBox1.Location = new System.Drawing.Point(10, 310);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(307, 32);
+            this.comboBox1.Size = new System.Drawing.Size(264, 27);
             this.comboBox1.Sorted = true;
             this.comboBox1.TabIndex = 13;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -346,9 +413,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(322, 16);
+            this.label9.Location = new System.Drawing.Point(276, 13);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 24);
+            this.label9.Size = new System.Drawing.Size(73, 19);
             this.label9.TabIndex = 12;
             this.label9.Text = "المعرف :";
             // 
@@ -356,9 +423,9 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(322, 211);
+            this.label10.Location = new System.Drawing.Point(276, 171);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 24);
+            this.label10.Size = new System.Drawing.Size(75, 19);
             this.label10.TabIndex = 16;
             this.label10.Text = " الإيميل :";
             // 
@@ -366,9 +433,9 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(322, 133);
+            this.label11.Location = new System.Drawing.Point(276, 108);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 24);
+            this.label11.Size = new System.Drawing.Size(62, 19);
             this.label11.TabIndex = 17;
             this.label11.Text = " العمر :";
             // 
@@ -376,9 +443,9 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(322, 94);
+            this.label12.Location = new System.Drawing.Point(276, 76);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 24);
+            this.label12.Size = new System.Drawing.Size(70, 19);
             this.label12.TabIndex = 18;
             this.label12.Text = " الهاتف :";
             // 
@@ -386,9 +453,9 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(322, 55);
+            this.label13.Location = new System.Drawing.Point(276, 45);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(86, 24);
+            this.label13.Size = new System.Drawing.Size(70, 19);
             this.label13.TabIndex = 19;
             this.label13.Text = " الاسم :";
             // 
@@ -396,9 +463,9 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(322, 172);
+            this.label14.Location = new System.Drawing.Point(276, 140);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(120, 24);
+            this.label14.Size = new System.Drawing.Size(94, 19);
             this.label14.TabIndex = 20;
             this.label14.Text = "مدة الدوام :";
             // 
@@ -406,9 +473,9 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(322, 250);
+            this.label15.Location = new System.Drawing.Point(276, 203);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(94, 24);
+            this.label15.Size = new System.Drawing.Size(75, 19);
             this.label15.TabIndex = 21;
             this.label15.Text = " الجنس :";
             // 
@@ -417,10 +484,10 @@
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.lblID.ForeColor = System.Drawing.Color.Blue;
-            this.lblID.Location = new System.Drawing.Point(15, 16);
+            this.lblID.Location = new System.Drawing.Point(13, 13);
             this.lblID.Name = "lblID";
             this.lblID.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblID.Size = new System.Drawing.Size(131, 24);
+            this.lblID.Size = new System.Drawing.Size(105, 19);
             this.lblID.TabIndex = 22;
             this.lblID.Text = "UNDEFINED";
             // 
@@ -429,10 +496,10 @@
             this.lblWorkingPeriod.AutoSize = true;
             this.lblWorkingPeriod.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.lblWorkingPeriod.ForeColor = System.Drawing.Color.Blue;
-            this.lblWorkingPeriod.Location = new System.Drawing.Point(15, 172);
+            this.lblWorkingPeriod.Location = new System.Drawing.Point(13, 140);
             this.lblWorkingPeriod.Name = "lblWorkingPeriod";
             this.lblWorkingPeriod.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblWorkingPeriod.Size = new System.Drawing.Size(131, 24);
+            this.lblWorkingPeriod.Size = new System.Drawing.Size(105, 19);
             this.lblWorkingPeriod.TabIndex = 23;
             this.lblWorkingPeriod.Text = "UNDEFINED";
             // 
@@ -441,10 +508,10 @@
             this.lblAge.AutoSize = true;
             this.lblAge.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.lblAge.ForeColor = System.Drawing.Color.Blue;
-            this.lblAge.Location = new System.Drawing.Point(15, 133);
+            this.lblAge.Location = new System.Drawing.Point(13, 108);
             this.lblAge.Name = "lblAge";
             this.lblAge.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblAge.Size = new System.Drawing.Size(131, 24);
+            this.lblAge.Size = new System.Drawing.Size(105, 19);
             this.lblAge.TabIndex = 24;
             this.lblAge.Text = "UNDEFINED";
             // 
@@ -453,10 +520,10 @@
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.lblPhone.ForeColor = System.Drawing.Color.Blue;
-            this.lblPhone.Location = new System.Drawing.Point(15, 94);
+            this.lblPhone.Location = new System.Drawing.Point(13, 76);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblPhone.Size = new System.Drawing.Size(131, 24);
+            this.lblPhone.Size = new System.Drawing.Size(105, 19);
             this.lblPhone.TabIndex = 25;
             this.lblPhone.Text = "UNDEFINED";
             // 
@@ -465,10 +532,10 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.lblName.ForeColor = System.Drawing.Color.Blue;
-            this.lblName.Location = new System.Drawing.Point(15, 55);
+            this.lblName.Location = new System.Drawing.Point(13, 45);
             this.lblName.Name = "lblName";
             this.lblName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblName.Size = new System.Drawing.Size(131, 24);
+            this.lblName.Size = new System.Drawing.Size(105, 19);
             this.lblName.TabIndex = 26;
             this.lblName.Text = "UNDEFINED";
             // 
@@ -477,10 +544,10 @@
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.lblGender.ForeColor = System.Drawing.Color.Blue;
-            this.lblGender.Location = new System.Drawing.Point(15, 250);
+            this.lblGender.Location = new System.Drawing.Point(13, 203);
             this.lblGender.Name = "lblGender";
             this.lblGender.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblGender.Size = new System.Drawing.Size(131, 24);
+            this.lblGender.Size = new System.Drawing.Size(105, 19);
             this.lblGender.TabIndex = 27;
             this.lblGender.Text = "UNDEFINED";
             // 
@@ -489,10 +556,10 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.lblEmail.ForeColor = System.Drawing.Color.Blue;
-            this.lblEmail.Location = new System.Drawing.Point(15, 211);
+            this.lblEmail.Location = new System.Drawing.Point(13, 171);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblEmail.Size = new System.Drawing.Size(131, 24);
+            this.lblEmail.Size = new System.Drawing.Size(105, 19);
             this.lblEmail.TabIndex = 28;
             this.lblEmail.Text = "UNDEFINED";
             // 
@@ -516,10 +583,46 @@
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(12, 43);
+            this.panel1.Location = new System.Drawing.Point(10, 35);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(680, 323);
+            this.panel1.Size = new System.Drawing.Size(583, 262);
             this.panel1.TabIndex = 29;
+            // 
+            // lblSalary
+            // 
+            this.lblSalary.AutoSize = true;
+            this.lblSalary.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSalary.ForeColor = System.Drawing.Color.Blue;
+            this.lblSalary.Location = new System.Drawing.Point(13, 235);
+            this.lblSalary.Name = "lblSalary";
+            this.lblSalary.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblSalary.Size = new System.Drawing.Size(105, 19);
+            this.lblSalary.TabIndex = 30;
+            this.lblSalary.Text = "UNDEFINED";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.label18.Location = new System.Drawing.Point(276, 235);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(67, 19);
+            this.label18.TabIndex = 29;
+            this.label18.Text = " الراتب :";
+            // 
+            // pbEmployee
+            // 
+            this.pbEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEmployee.Location = new System.Drawing.Point(381, 15);
+            this.pbEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbEmployee.Name = "pbEmployee";
+            this.pbEmployee.Size = new System.Drawing.Size(192, 230);
+            this.pbEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbEmployee.TabIndex = 15;
+            this.pbEmployee.TabStop = false;
             // 
             // imageList1
             // 
@@ -585,105 +688,38 @@
             this.listView1.Font = new System.Drawing.Font("Tahoma", 12F);
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
+            listViewItem3,
+            listViewItem4});
             this.listView1.LargeImageList = this.imageList2;
-            this.listView1.Location = new System.Drawing.Point(12, 420);
+            this.listView1.Location = new System.Drawing.Point(10, 341);
+            this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView1.Name = "listView1";
             this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.listView1.RightToLeftLayout = true;
-            this.listView1.Size = new System.Drawing.Size(1520, 359);
+            this.listView1.Size = new System.Drawing.Size(1303, 292);
             this.listView1.SmallImageList = this.imageList1;
             this.listView1.TabIndex = 12;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // btnCheckEmployees
-            // 
-            this.btnCheckEmployees.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.btnCheckEmployees.Location = new System.Drawing.Point(909, 353);
-            this.btnCheckEmployees.Name = "btnCheckEmployees";
-            this.btnCheckEmployees.Size = new System.Drawing.Size(257, 60);
-            this.btnCheckEmployees.TabIndex = 31;
-            this.btnCheckEmployees.Tag = "1";
-            this.btnCheckEmployees.Text = "تحديد العناصر";
-            this.btnCheckEmployees.UseVisualStyleBackColor = true;
-            this.btnCheckEmployees.Click += new System.EventHandler(this.btnCheckEmployees_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(660, 242);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(86, 24);
-            this.label16.TabIndex = 12;
-            this.label16.Text = " الراتب :";
-            // 
-            // mtxtSalary
-            // 
-            this.mtxtSalary.Location = new System.Drawing.Point(584, 239);
-            this.mtxtSalary.Mask = "000999";
-            this.mtxtSalary.Name = "mtxtSalary";
-            this.mtxtSalary.Size = new System.Drawing.Size(73, 28);
-            this.mtxtSalary.TabIndex = 4;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(530, 241);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(48, 24);
-            this.label17.TabIndex = 14;
-            this.label17.Text = " د.ل";
-            // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "الراتب";
             this.columnHeader8.Width = 146;
             // 
-            // label18
+            // btnCheckEmployees
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(322, 289);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(86, 24);
-            this.label18.TabIndex = 29;
-            this.label18.Text = " الراتب :";
-            // 
-            // lblSalary
-            // 
-            this.lblSalary.AutoSize = true;
-            this.lblSalary.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.lblSalary.ForeColor = System.Drawing.Color.Blue;
-            this.lblSalary.Location = new System.Drawing.Point(15, 289);
-            this.lblSalary.Name = "lblSalary";
-            this.lblSalary.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSalary.Size = new System.Drawing.Size(131, 24);
-            this.lblSalary.TabIndex = 30;
-            this.lblSalary.Text = "UNDEFINED";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Lime;
-            this.btnAdd.BackgroundImage = global::Employees_Management.Properties.Resources.add_Button;
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.LimeGreen;
-            this.btnAdd.FlatAppearance.BorderSize = 2;
-            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
-            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAdd.Location = new System.Drawing.Point(11, 202);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(128, 68);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnCheckEmployees.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.btnCheckEmployees.Location = new System.Drawing.Point(779, 287);
+            this.btnCheckEmployees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCheckEmployees.Name = "btnCheckEmployees";
+            this.btnCheckEmployees.Size = new System.Drawing.Size(220, 49);
+            this.btnCheckEmployees.TabIndex = 31;
+            this.btnCheckEmployees.Tag = "1";
+            this.btnCheckEmployees.Text = "تحديد العناصر";
+            this.btnCheckEmployees.UseVisualStyleBackColor = true;
+            this.btnCheckEmployees.Click += new System.EventHandler(this.btnCheckEmployees_Click);
             // 
             // button2
             // 
@@ -696,9 +732,10 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(1203, 353);
+            this.button2.Location = new System.Drawing.Point(1031, 287);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 60);
+            this.button2.Size = new System.Drawing.Size(117, 49);
             this.button2.TabIndex = 14;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -714,32 +751,26 @@
             this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRemove.Location = new System.Drawing.Point(1377, 353);
+            this.btnRemove.Location = new System.Drawing.Point(1180, 287);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(137, 60);
+            this.btnRemove.Size = new System.Drawing.Size(117, 49);
             this.btnRemove.TabIndex = 12;
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // pbEmployee
+            // errorProvider1
             // 
-            this.pbEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbEmployee.Location = new System.Drawing.Point(444, 19);
-            this.pbEmployee.Name = "pbEmployee";
-            this.pbEmployee.Size = new System.Drawing.Size(224, 282);
-            this.pbEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbEmployee.TabIndex = 15;
-            this.pbEmployee.TabStop = false;
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
             // 
             // Form1
             // 
             this.AcceptButton = this.btnAdd;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1537, 791);
+            this.ClientSize = new System.Drawing.Size(1317, 643);
             this.Controls.Add(this.btnCheckEmployees);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnRemove);
@@ -751,6 +782,7 @@
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "برنامج إدارة الموظفين";
@@ -764,6 +796,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -827,6 +860,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.Label lblSalary;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

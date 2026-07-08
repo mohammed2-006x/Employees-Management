@@ -69,14 +69,115 @@ namespace Employees_Management
 
         }
 
+        void ResetProviderError()
+        {
+            errorProvider1.SetError(txtFullName, "");
+            errorProvider1.SetError(txtEmail, "");
+            errorProvider1.SetError(txtPhone, "");
+            errorProvider1.SetError(mtxtFrom, "");
+            errorProvider1.SetError(mtxtTo, "");
+            errorProvider1.SetError(mtxtSalary, "");
+
+
+
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
             if (string.IsNullOrEmpty(txtFullName.Text) || string.IsNullOrEmpty(txtPhone.Text) || string.IsNullOrEmpty(txtEmail.Text) || mtxtFrom.MaskFull == false || mtxtTo.MaskFull == false || mtxtSalary.MaskCompleted == false )
             {
+                if(string.IsNullOrEmpty(txtFullName.Text))
+                {
+                    txtFullName.Focus();
+                    errorProvider1.SetError(txtFullName, "the Full Name Should Have A value");
                 return;
-            }
+                }
+                else
+                {
+                    errorProvider1.SetError(txtFullName, "");
 
+                }
+
+
+
+
+                if (string.IsNullOrEmpty(txtEmail.Text))
+                {
+                    txtEmail.Focus();
+                    errorProvider1.SetError(txtEmail, "the Email Should Have A value");
+                return;
+                }
+                else
+                {
+                    errorProvider1.SetError(txtEmail, "");
+
+                }
+
+
+
+                if (string.IsNullOrEmpty(txtPhone.Text))
+                {
+                    txtPhone.Focus();
+                    errorProvider1.SetError(txtPhone, "the Phone Should Have A value");
+                return;
+                }
+                else
+                {
+                    errorProvider1.SetError(txtPhone, "");
+
+                }
+
+
+
+
+
+                if (mtxtFrom.MaskFull == false)
+                {
+                    mtxtFrom.Focus();
+                    errorProvider1.SetError(mtxtFrom, "Enter the Full Time");
+                return;
+                }
+                else
+                {
+                    errorProvider1.SetError(mtxtFrom, "");
+
+                }
+
+
+
+
+                if (mtxtTo.MaskFull == false)
+                {
+                    mtxtTo.Focus();
+                    errorProvider1.SetError(mtxtTo, "Enter the Full Time");
+                return;
+                }
+                else
+                {
+                    errorProvider1.SetError(mtxtTo, "");
+
+                }
+
+
+
+
+                if (mtxtSalary.MaskCompleted == false)
+                {
+                    mtxtSalary.Focus();
+                    errorProvider1.SetError(mtxtSalary, "the Salary Should Have A Value");
+                return;
+                }
+                else
+                {
+                    errorProvider1.SetError(mtxtSalary, "");
+
+                }
+
+
+
+            }
+            ResetProviderError();
 
             ListViewItem item = new ListViewItem((_IDForCurrentEmployee++).ToString());
 
@@ -181,6 +282,7 @@ namespace Employees_Management
             lblWorkingPeriod.Text = "UNDEFINED";
             lblEmail.Text = "UNDEFINED";
             lblGender.Text = "UNDEFINED";
+            lblSalary.Text = "UNDEFINED";
             pbEmployee.Image = null;
         }
 
@@ -281,6 +383,11 @@ namespace Employees_Management
             F2.ShowDialog();
 
             listView1.Refresh();
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }

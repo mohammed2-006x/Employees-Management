@@ -27,17 +27,17 @@ namespace Employees_Management
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count > 0)
+            if (lvEmployeesList.SelectedItems.Count > 0)
             {
-                lblID.Text = listView1.SelectedItems[0].Text;
-                lblName.Text = listView1.SelectedItems[0].SubItems[1].Text;
-                lblPhone.Text = listView1.SelectedItems[0].SubItems[2].Text;
-                lblAge.Text = listView1.SelectedItems[0].SubItems[3].Text;
-                lblWorkingPeriod.Text = listView1.SelectedItems[0].SubItems[4].Text;
-                lblEmail.Text = listView1.SelectedItems[0].SubItems[5].Text;
-                lblGender.Text = (listView1.SelectedItems[0].SubItems[6].Text == "M") ? "ذكر" : "أنثى";
-                lblSalary.Text = listView1.SelectedItems[0].SubItems[7].Text;
-                pbEmployee.Image = (listView1.SelectedItems[0].ImageIndex == 0) ? Resources.Man : Resources.Woman;
+                lblID.Text = lvEmployeesList.SelectedItems[0].Text;
+                lblName.Text = lvEmployeesList.SelectedItems[0].SubItems[1].Text;
+                lblPhone.Text = lvEmployeesList.SelectedItems[0].SubItems[2].Text;
+                lblAge.Text = lvEmployeesList.SelectedItems[0].SubItems[3].Text;
+                lblWorkingPeriod.Text = lvEmployeesList.SelectedItems[0].SubItems[4].Text;
+                lblEmail.Text = lvEmployeesList.SelectedItems[0].SubItems[5].Text;
+                lblGender.Text = (lvEmployeesList.SelectedItems[0].SubItems[6].Text == "M") ? "ذكر" : "أنثى";
+                lblSalary.Text = lvEmployeesList.SelectedItems[0].SubItems[7].Text;
+                pbEmployee.Image = (lvEmployeesList.SelectedItems[0].ImageIndex == 0) ? Resources.Man : Resources.Woman;
             }
         }
 
@@ -202,7 +202,7 @@ namespace Employees_Management
             item.ImageIndex = rbMale.Checked ? 0 : 1;
 
 
-            listView1.Items.Add(item);
+            lvEmployeesList.Items.Add(item);
 
             txtFullName.Clear();
             txtEmail.Clear();
@@ -222,27 +222,27 @@ namespace Employees_Management
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                listView1.View = View.SmallIcon;
+                lvEmployeesList.View = View.SmallIcon;
                 return;
             }
             if (comboBox1.SelectedIndex == 1)
             {
-                listView1.View = View.LargeIcon;
+                lvEmployeesList.View = View.LargeIcon;
                 return;
             }
             if (comboBox1.SelectedIndex == 2)
             {
-                listView1.View = View.Details;
+                lvEmployeesList.View = View.Details;
                 return;
             }
             if (comboBox1.SelectedIndex == 3)
             {
-                listView1.View = View.List;
+                lvEmployeesList.View = View.List;
                 return;
             }
             if (comboBox1.SelectedIndex == 4)
             {
-                listView1.View = View.Tile;
+                lvEmployeesList.View = View.Tile;
                 return;
             }
         }
@@ -291,14 +291,14 @@ namespace Employees_Management
         {
             if (btnCheckEmployees.Tag.ToString() == "1")
             {
-                if (listView1.SelectedItems.Count == 0)
+                if (lvEmployeesList.SelectedItems.Count == 0)
                 {
                     MessageBox.Show("من فضلك قم بتحديد الموظفين المراد حذفهم من القائمة", "خطأ في الحدف", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 else
                 {
-                    foreach (ListViewItem Item in listView1.SelectedItems)
+                    foreach (ListViewItem Item in lvEmployeesList.SelectedItems)
                     {
                         Item.Remove();
 
@@ -306,7 +306,7 @@ namespace Employees_Management
 
                     bool IsEmployeeDeleted1 = true;
 
-                    foreach (ListViewItem Item in listView1.Items)
+                    foreach (ListViewItem Item in lvEmployeesList.Items)
                     {
                         if (Item.Text==lblID.Text)
                         {
@@ -326,13 +326,13 @@ namespace Employees_Management
 
 
 
-            if (listView1.CheckedItems.Count == 0)
+            if (lvEmployeesList.CheckedItems.Count == 0)
             {
                 MessageBox.Show("من فضلك قم بتحديد الموظفين المراد حذفهم من القائمة", "خطأ في الحدف", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            foreach (ListViewItem Item in listView1.CheckedItems)
+            foreach (ListViewItem Item in lvEmployeesList.CheckedItems)
             {
                 Item.Remove();
 
@@ -340,7 +340,7 @@ namespace Employees_Management
 
             bool IsEmployeeDeleted2 = true;
 
-            foreach (ListViewItem Item in listView1.Items)
+            foreach (ListViewItem Item in lvEmployeesList.Items)
             {
                 if (Item.Text == lblID.Text)
                 {
@@ -360,66 +360,37 @@ namespace Employees_Management
         {
             if (btnCheckEmployees.Tag.ToString() == "1")
             {
-                listView1.CheckBoxes = true;
+                lvEmployeesList.CheckBoxes = true;
                 btnCheckEmployees.Text = "إلغاء التحديد العناصر";
                 btnCheckEmployees.Tag = "0";
             }
             else if (btnCheckEmployees.Tag.ToString() == "0")
             {
-                listView1.CheckBoxes = false;
+                lvEmployeesList.CheckBoxes = false;
                 btnCheckEmployees.Text = "تحديد العناصر";
                 btnCheckEmployees.Tag = "1";
             }
         }
 
-       
-
-        private void btnFontControl_Click(object sender, EventArgs e)
-        {
-            fontDialog1.ShowApply = true;
-            fontDialog1.ShowColor = true;
-            fontDialog1.ShowEffects = true;
-
-            fontDialog1.Font = listView1.Font;
-
-
-            if (fontDialog1.ShowDialog() == DialogResult.OK)
-            {
-
-                listView1.Font = fontDialog1.Font;
-                listView1.ForeColor = fontDialog1.Color;
-
-            }
-
-        }
-
-        private void btnColorBackGround_Click(object sender, EventArgs e)
-        {
-            if(colorDialog1.ShowDialog()==DialogResult.OK)
-            {
-                listView1.BackColor = colorDialog1.Color;
-            }
-        }
-
         private void btnEditEmployee_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count == 0)
+            if (lvEmployeesList.SelectedItems.Count == 0)
             {
                 MessageBox.Show("من فضلك قم بتحديد الموظف المراد تعديل بياناته من القائمة", "خطأ في التعديل", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            frmEditEmployee F2 = new frmEditEmployee(listView1.SelectedItems[0]);
+            frmEditEmployee F2 = new frmEditEmployee(lvEmployeesList.SelectedItems[0]);
 
             F2.ShowDialog();
 
-            listView1.Refresh();
+            lvEmployeesList.Refresh();
 
         }
 
         private void fontDialog1_Apply(object sender, EventArgs e)
         {
-            listView1.Font = fontDialog1.Font;
-            listView1.ForeColor = fontDialog1.Color;
+            lvEmployeesList.Font = fontDialog1.Font;
+            lvEmployeesList.ForeColor = fontDialog1.Color;
         }
 
         private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -468,6 +439,32 @@ namespace Employees_Management
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void tsmFont_Click(object sender, EventArgs e)
+        {
+            fontDialog1.ShowApply = true;
+            fontDialog1.ShowColor = true;
+            fontDialog1.ShowEffects = true;
+
+            fontDialog1.Font = lvEmployeesList.Font;
+
+
+            if (fontDialog1.ShowDialog() == DialogResult.OK)
+            {
+
+                lvEmployeesList.Font = fontDialog1.Font;
+                lvEmployeesList.ForeColor = fontDialog1.Color;
+
+            }
+        }
+
+        private void tsmBackColor_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                lvEmployeesList.BackColor = colorDialog1.Color;
+            }
         }
     }
 

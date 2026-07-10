@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "2001",
             "محمد طاهر",
             "0916216683",
@@ -39,7 +39,7 @@
             "mohammedtaher@gmail.com",
             "M",
             "10000د.ل"}, 0);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "2002",
             "علي عكيكة",
             "0925478896",
@@ -64,6 +64,7 @@
             this.rbMale = new System.Windows.Forms.RadioButton();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -88,7 +89,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSalary = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.btnColorBackGround = new System.Windows.Forms.Button();
+            this.pbEmployee = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -98,37 +99,38 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvEmployeesList = new System.Windows.Forms.ListView();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmsEmployeesList = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmFont = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmBackColor = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCheckEmployees = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnFontControl = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.فتحملفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontShapeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.فتحملفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.fontDialog2 = new System.Windows.Forms.FontDialog();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnEditEmployee = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.pbEmployee = new System.Windows.Forms.PictureBox();
-            this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbEmployeeInfo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbGender.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmployee)).BeginInit();
+            this.cmsEmployeesList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -325,6 +327,26 @@
             this.txtPhone.Size = new System.Drawing.Size(241, 27);
             this.txtPhone.TabIndex = 2;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Lime;
+            this.btnAdd.BackgroundImage = global::Employees_Management.Properties.Resources.add_Button;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.LimeGreen;
+            this.btnAdd.FlatAppearance.BorderSize = 2;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnAdd.Location = new System.Drawing.Point(15, 225);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(111, 55);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // txtFullName
             // 
             this.txtFullName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
@@ -380,7 +402,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(382, 383);
+            this.label8.Location = new System.Drawing.Point(177, 383);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(150, 23);
             this.label8.TabIndex = 6;
@@ -398,7 +420,7 @@
             "تفاصيل",
             "قائمة",
             "لوحات"});
-            this.comboBox1.Location = new System.Drawing.Point(218, 383);
+            this.comboBox1.Location = new System.Drawing.Point(13, 383);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(166, 27);
@@ -608,18 +630,18 @@
             this.label18.TabIndex = 29;
             this.label18.Text = " الراتب :";
             // 
-            // btnColorBackGround
+            // pbEmployee
             // 
-            this.btnColorBackGround.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Bold);
-            this.btnColorBackGround.Location = new System.Drawing.Point(11, 383);
-            this.btnColorBackGround.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnColorBackGround.Name = "btnColorBackGround";
-            this.btnColorBackGround.Size = new System.Drawing.Size(95, 27);
-            this.btnColorBackGround.TabIndex = 32;
-            this.btnColorBackGround.Tag = "1";
-            this.btnColorBackGround.Text = "لون الخلفية";
-            this.btnColorBackGround.UseVisualStyleBackColor = true;
-            this.btnColorBackGround.Click += new System.EventHandler(this.btnColorBackGround_Click);
+            this.pbEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEmployee.Location = new System.Drawing.Point(381, 14);
+            this.pbEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.pbEmployee.Name = "pbEmployee";
+            this.pbEmployee.Size = new System.Drawing.Size(191, 227);
+            this.pbEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbEmployee.TabIndex = 15;
+            this.pbEmployee.TabStop = false;
             // 
             // imageList1
             // 
@@ -671,9 +693,9 @@
             this.columnHeader7.Text = "الجنس";
             this.columnHeader7.Width = 79;
             // 
-            // listView1
+            // lvEmployeesList
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvEmployeesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
@@ -682,28 +704,53 @@
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
-            this.listView1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.listView1.HideSelection = false;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
-            this.listView1.LargeImageList = this.imageList2;
-            this.listView1.Location = new System.Drawing.Point(12, 414);
-            this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listView1.Name = "listView1";
-            this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.listView1.RightToLeftLayout = true;
-            this.listView1.Size = new System.Drawing.Size(1379, 374);
-            this.listView1.SmallImageList = this.imageList1;
-            this.listView1.TabIndex = 12;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.lvEmployeesList.ContextMenuStrip = this.cmsEmployeesList;
+            this.lvEmployeesList.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lvEmployeesList.HideSelection = false;
+            this.lvEmployeesList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2});
+            this.lvEmployeesList.LargeImageList = this.imageList2;
+            this.lvEmployeesList.Location = new System.Drawing.Point(12, 414);
+            this.lvEmployeesList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvEmployeesList.Name = "lvEmployeesList";
+            this.lvEmployeesList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lvEmployeesList.RightToLeftLayout = true;
+            this.lvEmployeesList.Size = new System.Drawing.Size(1379, 374);
+            this.lvEmployeesList.SmallImageList = this.imageList1;
+            this.lvEmployeesList.TabIndex = 12;
+            this.lvEmployeesList.UseCompatibleStateImageBehavior = false;
+            this.lvEmployeesList.View = System.Windows.Forms.View.Details;
+            this.lvEmployeesList.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "الراتب";
             this.columnHeader8.Width = 146;
+            // 
+            // cmsEmployeesList
+            // 
+            this.cmsEmployeesList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmFont,
+            this.tsmBackColor});
+            this.cmsEmployeesList.Name = "contextMenuStrip1";
+            this.cmsEmployeesList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmsEmployeesList.Size = new System.Drawing.Size(130, 48);
+            // 
+            // tsmFont
+            // 
+            this.tsmFont.Name = "tsmFont";
+            this.tsmFont.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.tsmFont.Size = new System.Drawing.Size(180, 22);
+            this.tsmFont.Text = "شكل الخط";
+            this.tsmFont.Click += new System.EventHandler(this.tsmFont_Click);
+            // 
+            // tsmBackColor
+            // 
+            this.tsmBackColor.Name = "tsmBackColor";
+            this.tsmBackColor.Size = new System.Drawing.Size(180, 22);
+            this.tsmBackColor.Text = "لون الخلفية";
+            this.tsmBackColor.Click += new System.EventHandler(this.tsmBackColor_Click);
             // 
             // btnCheckEmployees
             // 
@@ -723,19 +770,6 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.RightToLeft = true;
             // 
-            // btnFontControl
-            // 
-            this.btnFontControl.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Bold);
-            this.btnFontControl.Location = new System.Drawing.Point(112, 383);
-            this.btnFontControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFontControl.Name = "btnFontControl";
-            this.btnFontControl.Size = new System.Drawing.Size(95, 27);
-            this.btnFontControl.TabIndex = 33;
-            this.btnFontControl.Tag = "1";
-            this.btnFontControl.Text = "شكل الخط";
-            this.btnFontControl.UseVisualStyleBackColor = true;
-            this.btnFontControl.Click += new System.EventHandler(this.btnFontControl_Click);
-            // 
             // fontDialog1
             // 
             this.fontDialog1.Apply += new System.EventHandler(this.fontDialog1_Apply);
@@ -753,19 +787,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
-            // فتحملفToolStripMenuItem
-            // 
-            this.فتحملفToolStripMenuItem.Name = "فتحملفToolStripMenuItem";
-            this.فتحملفToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.فتحملفToolStripMenuItem.Text = "Open F&ile";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.DefaultExt = "cs";
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "C Sharp Files | *.cs | Text File |*.txt | All Files | *.*";
-            this.openFileDialog1.InitialDirectory = "C:";
             // 
             // fileToolStripMenuItem
             // 
@@ -794,6 +815,16 @@
             this.openFolderToolStripMenuItem.Text = "Open Fol&der";
             this.openFolderToolStripMenuItem.Click += new System.EventHandler(this.openFolderToolStripMenuItem_Click);
             // 
+            // saveAllToolStripMenuItem
+            // 
+            this.saveAllToolStripMenuItem.Image = global::Employees_Management.Properties.Resources.لقطة_شاشة_2026_07_07_210148;
+            this.saveAllToolStripMenuItem.Name = "saveAllToolStripMenuItem";
+            this.saveAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.saveAllToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.saveAllToolStripMenuItem.Text = "&Save All";
+            this.saveAllToolStripMenuItem.Click += new System.EventHandler(this.saveAllToolStripMenuItem_Click);
+            // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -818,29 +849,22 @@
             this.fontShapeToolStripMenuItem.Text = "&Font Shape";
             this.fontShapeToolStripMenuItem.Click += new System.EventHandler(this.fontShapeToolStripMenuItem_Click);
             // 
+            // فتحملفToolStripMenuItem
+            // 
+            this.فتحملفToolStripMenuItem.Name = "فتحملفToolStripMenuItem";
+            this.فتحملفToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.فتحملفToolStripMenuItem.Text = "Open F&ile";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.DefaultExt = "cs";
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "C Sharp Files | *.cs | Text File |*.txt | All Files | *.*";
+            this.openFileDialog1.InitialDirectory = "C:";
+            // 
             // fontDialog2
             // 
             this.fontDialog2.Apply += new System.EventHandler(this.fontDialog2_Apply);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Lime;
-            this.btnAdd.BackgroundImage = global::Employees_Management.Properties.Resources.add_Button;
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.LimeGreen;
-            this.btnAdd.FlatAppearance.BorderSize = 2;
-            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
-            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAdd.Location = new System.Drawing.Point(15, 225);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(111, 55);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEditEmployee
             // 
@@ -880,29 +904,6 @@
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // pbEmployee
-            // 
-            this.pbEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbEmployee.Location = new System.Drawing.Point(381, 14);
-            this.pbEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.pbEmployee.Name = "pbEmployee";
-            this.pbEmployee.Size = new System.Drawing.Size(191, 227);
-            this.pbEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbEmployee.TabIndex = 15;
-            this.pbEmployee.TabStop = false;
-            // 
-            // saveAllToolStripMenuItem
-            // 
-            this.saveAllToolStripMenuItem.Image = global::Employees_Management.Properties.Resources.لقطة_شاشة_2026_07_07_210148;
-            this.saveAllToolStripMenuItem.Name = "saveAllToolStripMenuItem";
-            this.saveAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-            this.saveAllToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.saveAllToolStripMenuItem.Text = "&Save All";
-            this.saveAllToolStripMenuItem.Click += new System.EventHandler(this.saveAllToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AcceptButton = this.btnAdd;
@@ -910,14 +911,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1403, 799);
-            this.Controls.Add(this.btnFontControl);
-            this.Controls.Add(this.btnColorBackGround);
             this.Controls.Add(this.btnCheckEmployees);
             this.Controls.Add(this.btnEditEmployee);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lvEmployeesList);
             this.Controls.Add(this.gbEmployeeInfo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -938,10 +937,11 @@
             this.gbGender.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmployee)).EndInit();
+            this.cmsEmployeesList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -997,7 +997,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvEmployeesList;
         private System.Windows.Forms.Button btnCheckEmployees;
         private System.Windows.Forms.MaskedTextBox mtxtSalary;
         private System.Windows.Forms.Label label16;
@@ -1006,8 +1006,6 @@
         private System.Windows.Forms.Label lblSalary;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Button btnColorBackGround;
-        private System.Windows.Forms.Button btnFontControl;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -1023,6 +1021,9 @@
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fontShapeToolStripMenuItem;
         private System.Windows.Forms.FontDialog fontDialog2;
+        private System.Windows.Forms.ContextMenuStrip cmsEmployeesList;
+        private System.Windows.Forms.ToolStripMenuItem tsmFont;
+        private System.Windows.Forms.ToolStripMenuItem tsmBackColor;
     }
 }
 

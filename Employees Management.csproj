@@ -112,5 +112,8 @@
   <ItemGroup>
     <None Include="Resources\5794436045595151902_121.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\لقطة شاشة 2026-07-07 210148.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

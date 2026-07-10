@@ -64,7 +64,6 @@
             this.rbMale = new System.Windows.Forms.RadioButton();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -89,7 +88,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSalary = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.pbEmployee = new System.Windows.Forms.PictureBox();
             this.btnColorBackGround = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
@@ -103,18 +101,34 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCheckEmployees = new System.Windows.Forms.Button();
-            this.btnEditEmployee = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnFontControl = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.فتحملفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontShapeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontDialog2 = new System.Windows.Forms.FontDialog();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEditEmployee = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.pbEmployee = new System.Windows.Forms.PictureBox();
+            this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbEmployeeInfo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbGender.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -123,9 +137,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Tahoma", 15F);
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Location = new System.Drawing.Point(0, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1346, 28);
+            this.label1.Size = new System.Drawing.Size(1403, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = " ادارة الموظفين";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -148,7 +162,7 @@
             this.gbEmployeeInfo.Controls.Add(this.label3);
             this.gbEmployeeInfo.Controls.Add(this.label2);
             this.gbEmployeeInfo.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.gbEmployeeInfo.Location = new System.Drawing.Point(597, 35);
+            this.gbEmployeeInfo.Location = new System.Drawing.Point(662, 72);
             this.gbEmployeeInfo.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.gbEmployeeInfo.Name = "gbEmployeeInfo";
             this.gbEmployeeInfo.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
@@ -311,26 +325,6 @@
             this.txtPhone.Size = new System.Drawing.Size(241, 27);
             this.txtPhone.TabIndex = 2;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Lime;
-            this.btnAdd.BackgroundImage = global::Employees_Management.Properties.Resources.add_Button;
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.LimeGreen;
-            this.btnAdd.FlatAppearance.BorderSize = 2;
-            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
-            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAdd.Location = new System.Drawing.Point(15, 225);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(111, 55);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // txtFullName
             // 
             this.txtFullName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
@@ -386,7 +380,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(394, 350);
+            this.label8.Location = new System.Drawing.Point(382, 383);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(150, 23);
             this.label8.TabIndex = 6;
@@ -404,7 +398,7 @@
             "تفاصيل",
             "قائمة",
             "لوحات"});
-            this.comboBox1.Location = new System.Drawing.Point(230, 350);
+            this.comboBox1.Location = new System.Drawing.Point(218, 383);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(166, 27);
@@ -586,10 +580,10 @@
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(9, 36);
+            this.panel1.Location = new System.Drawing.Point(33, 72);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(585, 289);
+            this.panel1.Size = new System.Drawing.Size(592, 295);
             this.panel1.TabIndex = 29;
             // 
             // lblSalary
@@ -614,23 +608,10 @@
             this.label18.TabIndex = 29;
             this.label18.Text = " الراتب :";
             // 
-            // pbEmployee
-            // 
-            this.pbEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbEmployee.Location = new System.Drawing.Point(381, 14);
-            this.pbEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.pbEmployee.Name = "pbEmployee";
-            this.pbEmployee.Size = new System.Drawing.Size(191, 227);
-            this.pbEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbEmployee.TabIndex = 15;
-            this.pbEmployee.TabStop = false;
-            // 
             // btnColorBackGround
             // 
             this.btnColorBackGround.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Bold);
-            this.btnColorBackGround.Location = new System.Drawing.Point(23, 350);
+            this.btnColorBackGround.Location = new System.Drawing.Point(11, 383);
             this.btnColorBackGround.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnColorBackGround.Name = "btnColorBackGround";
             this.btnColorBackGround.Size = new System.Drawing.Size(95, 27);
@@ -663,7 +644,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "الاسم كامل";
-            this.columnHeader2.Width = 266;
+            this.columnHeader2.Width = 191;
             // 
             // columnHeader3
             // 
@@ -707,12 +688,12 @@
             listViewItem3,
             listViewItem4});
             this.listView1.LargeImageList = this.imageList2;
-            this.listView1.Location = new System.Drawing.Point(9, 381);
+            this.listView1.Location = new System.Drawing.Point(12, 414);
             this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView1.Name = "listView1";
             this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.listView1.RightToLeftLayout = true;
-            this.listView1.Size = new System.Drawing.Size(1317, 374);
+            this.listView1.Size = new System.Drawing.Size(1379, 374);
             this.listView1.SmallImageList = this.imageList1;
             this.listView1.TabIndex = 12;
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -727,15 +708,139 @@
             // btnCheckEmployees
             // 
             this.btnCheckEmployees.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.btnCheckEmployees.Location = new System.Drawing.Point(819, 328);
+            this.btnCheckEmployees.Location = new System.Drawing.Point(995, 369);
             this.btnCheckEmployees.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnCheckEmployees.Name = "btnCheckEmployees";
-            this.btnCheckEmployees.Size = new System.Drawing.Size(219, 49);
+            this.btnCheckEmployees.Size = new System.Drawing.Size(191, 41);
             this.btnCheckEmployees.TabIndex = 31;
             this.btnCheckEmployees.Tag = "1";
             this.btnCheckEmployees.Text = "تحديد العناصر";
             this.btnCheckEmployees.UseVisualStyleBackColor = true;
             this.btnCheckEmployees.Click += new System.EventHandler(this.btnCheckEmployees_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
+            // 
+            // btnFontControl
+            // 
+            this.btnFontControl.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Bold);
+            this.btnFontControl.Location = new System.Drawing.Point(112, 383);
+            this.btnFontControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFontControl.Name = "btnFontControl";
+            this.btnFontControl.Size = new System.Drawing.Size(95, 27);
+            this.btnFontControl.TabIndex = 33;
+            this.btnFontControl.Tag = "1";
+            this.btnFontControl.Text = "شكل الخط";
+            this.btnFontControl.UseVisualStyleBackColor = true;
+            this.btnFontControl.Click += new System.EventHandler(this.btnFontControl_Click);
+            // 
+            // fontDialog1
+            // 
+            this.fontDialog1.Apply += new System.EventHandler(this.fontDialog1_Apply);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.menuStrip1.Size = new System.Drawing.Size(1403, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // فتحملفToolStripMenuItem
+            // 
+            this.فتحملفToolStripMenuItem.Name = "فتحملفToolStripMenuItem";
+            this.فتحملفToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.فتحملفToolStripMenuItem.Text = "Open F&ile";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.DefaultExt = "cs";
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "C Sharp Files | *.cs | Text File |*.txt | All Files | *.*";
+            this.openFileDialog1.InitialDirectory = "C:";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openFileToolStripMenuItem,
+            this.openFolderToolStripMenuItem,
+            this.saveAllToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // openFileToolStripMenuItem
+            // 
+            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
+            this.openFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.openFileToolStripMenuItem.Text = "Open F&ile";
+            this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
+            // 
+            // openFolderToolStripMenuItem
+            // 
+            this.openFolderToolStripMenuItem.Name = "openFolderToolStripMenuItem";
+            this.openFolderToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.openFolderToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.openFolderToolStripMenuItem.Text = "Open Fol&der";
+            this.openFolderToolStripMenuItem.Click += new System.EventHandler(this.openFolderToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backToolStripMenuItem,
+            this.fontShapeToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "&Edit";
+            // 
+            // backToolStripMenuItem
+            // 
+            this.backToolStripMenuItem.Name = "backToolStripMenuItem";
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.backToolStripMenuItem.Text = "&Background Color";
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
+            // 
+            // fontShapeToolStripMenuItem
+            // 
+            this.fontShapeToolStripMenuItem.Name = "fontShapeToolStripMenuItem";
+            this.fontShapeToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.fontShapeToolStripMenuItem.Text = "&Font Shape";
+            this.fontShapeToolStripMenuItem.Click += new System.EventHandler(this.fontShapeToolStripMenuItem_Click);
+            // 
+            // fontDialog2
+            // 
+            this.fontDialog2.Apply += new System.EventHandler(this.fontDialog2_Apply);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Lime;
+            this.btnAdd.BackgroundImage = global::Employees_Management.Properties.Resources.add_Button;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.LimeGreen;
+            this.btnAdd.FlatAppearance.BorderSize = 2;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnAdd.Location = new System.Drawing.Point(15, 225);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(111, 55);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEditEmployee
             // 
@@ -748,10 +853,10 @@
             this.btnEditEmployee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnEditEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditEmployee.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEditEmployee.Location = new System.Drawing.Point(1071, 328);
+            this.btnEditEmployee.Location = new System.Drawing.Point(1207, 369);
             this.btnEditEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnEditEmployee.Name = "btnEditEmployee";
-            this.btnEditEmployee.Size = new System.Drawing.Size(117, 49);
+            this.btnEditEmployee.Size = new System.Drawing.Size(89, 41);
             this.btnEditEmployee.TabIndex = 14;
             this.btnEditEmployee.UseVisualStyleBackColor = false;
             this.btnEditEmployee.Click += new System.EventHandler(this.btnEditEmployee_Click);
@@ -767,35 +872,36 @@
             this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRemove.Location = new System.Drawing.Point(1209, 328);
+            this.btnRemove.Location = new System.Drawing.Point(1302, 369);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(117, 49);
+            this.btnRemove.Size = new System.Drawing.Size(89, 41);
             this.btnRemove.TabIndex = 12;
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // errorProvider1
+            // pbEmployee
             // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.RightToLeft = true;
+            this.pbEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEmployee.Location = new System.Drawing.Point(381, 14);
+            this.pbEmployee.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.pbEmployee.Name = "pbEmployee";
+            this.pbEmployee.Size = new System.Drawing.Size(191, 227);
+            this.pbEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbEmployee.TabIndex = 15;
+            this.pbEmployee.TabStop = false;
             // 
-            // btnFontControl
+            // saveAllToolStripMenuItem
             // 
-            this.btnFontControl.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Bold);
-            this.btnFontControl.Location = new System.Drawing.Point(124, 350);
-            this.btnFontControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFontControl.Name = "btnFontControl";
-            this.btnFontControl.Size = new System.Drawing.Size(95, 27);
-            this.btnFontControl.TabIndex = 33;
-            this.btnFontControl.Tag = "1";
-            this.btnFontControl.Text = "شكل الخط";
-            this.btnFontControl.UseVisualStyleBackColor = true;
-            this.btnFontControl.Click += new System.EventHandler(this.btnFontControl_Click);
-            // 
-            // fontDialog1
-            // 
-            this.fontDialog1.Apply += new System.EventHandler(this.fontDialog1_Apply);
+            this.saveAllToolStripMenuItem.Image = global::Employees_Management.Properties.Resources.لقطة_شاشة_2026_07_07_210148;
+            this.saveAllToolStripMenuItem.Name = "saveAllToolStripMenuItem";
+            this.saveAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.saveAllToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.saveAllToolStripMenuItem.Text = "&Save All";
+            this.saveAllToolStripMenuItem.Click += new System.EventHandler(this.saveAllToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -803,7 +909,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1346, 767);
+            this.ClientSize = new System.Drawing.Size(1403, 799);
             this.Controls.Add(this.btnFontControl);
             this.Controls.Add(this.btnColorBackGround);
             this.Controls.Add(this.btnCheckEmployees);
@@ -815,8 +921,10 @@
             this.Controls.Add(this.gbEmployeeInfo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -830,8 +938,10 @@
             this.gbGender.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -900,6 +1010,19 @@
         private System.Windows.Forms.Button btnFontControl;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem فتحملفToolStripMenuItem;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAllToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fontShapeToolStripMenuItem;
+        private System.Windows.Forms.FontDialog fontDialog2;
     }
 }
 

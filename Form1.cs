@@ -421,6 +421,54 @@ namespace Employees_Management
             listView1.Font = fontDialog1.Font;
             listView1.ForeColor = fontDialog1.Color;
         }
+
+        private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            openFileDialog1.ShowDialog();
+
+
+        }
+
+        private void openFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.ShowDialog();
+        }
+
+        private void saveAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.ShowDialog();
+        }
+
+        private void backToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.BackColor = colorDialog1.Color;
+            }
+        }
+
+        private void fontShapeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fontDialog2.ShowColor = false;
+            fontDialog2.ShowApply = true;
+            if(fontDialog2.ShowDialog()==DialogResult.OK)
+            {
+                this.Font= fontDialog2.Font;
+              
+            }
+        }
+
+        private void fontDialog2_Apply(object sender, EventArgs e)
+        {
+            this.Font = fontDialog2.Font;
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 
 }

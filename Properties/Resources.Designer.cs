@@ -129,5 +129,15 @@ namespace Employees_Management.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap لقطة_شاشة_2026_07_07_210148 {
+            get {
+                object obj = ResourceManager.GetObject("لقطة شاشة 2026-07-07 210148", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
